@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.2/tocbot.min.css" integrity="sha512-SFw7k74K3983tyOlJIHa8atr9Ppef3Kix5cmifwzU7ZdtU2E0FRuOVRtd3ENpMJ8sNCie5hlb/0j23efcdQJXA==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
@@ -147,6 +148,14 @@
         });
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.2/tocbot.min.js" integrity="sha512-7UTycJFXmNG9IKkkV5JWoexFWByJK1mrmn91iIJXst84COVlQzAz5nZ9P/q7L1nvj7Xjtjx6FMlbMeb6svpn/w==" crossorigin="anonymous"></script>
+    <script>
+        tocbot.init({
+            tocSelector: '.toc',
+            contentSelector: '.post-content',
+            hasInnerContainers: true
+        });
+    </script>
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
 
